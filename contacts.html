@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="contact.css">
+    <meta charset="UTF-8">
+    <title>Contact - Toavina Randrianatrehina</title>
+</head>
+<body>
+    <header>
+        <h1>Toavina Randrianatrehina</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">A propos</a></li>
+                <li><a href="cursus.html">Cursus</a></li>
+                <li><a href="competences.html">Qualités | Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a class="active" href="contacts.html">Contact | CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <section class="contact-form">
+            <h1>Contactez-moi</h1>
+            <p>N'hésitez pas à me contacter pour toute question ou collaboration. Je serai ravi d'échanger avec vous !</p>
+            
+            <form>
+                <div class="form-group">
+                    <label for="name">Nom * :</label>
+                    <input type="text" id="name" name="name" placeholder="Dicklan Lagarrigue" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email * :</label>
+                    <input type="email" id="email" name="email" placeholder="Lagarrigue@email.fr" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet * :</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Sélectionnez un sujet</option>
+                        <option value="collaboration">Proposition de collaboration</option>
+                        <option value="emploi">Opportunité d'emploi</option>
+                        <option value="question">Question professionnelle</option>
+                        <option value="autre">Autre demande</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message * :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Je souhaiterais discuter d'une opportunité de collaboration..." required></textarea>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">J'accepte que mes données soient utilisées pour être recontacté(e)</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>Coordonnées</h2>
+            <p><strong>Email :</strong> toavina.randrianatrehina@etu.uca.fr</p>
+            
+            <div class="social-links">
+                <p><strong>Retrouvez-moi :</strong></p>
+                <a href="https://www.linkedin.com/in/toavina-randrianatrehina-6b150b365/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/Toav1na" target="_blank">GitHub</a>
+            </div>
+            
+            <div class="cv-download">
+                <a href="cv.pdf" download class="cv-btn">Télécharger mon CV</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025 Toavina Randrianatrehina. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

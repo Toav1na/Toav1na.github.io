@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: kanit, 'Georgia', serif;
+  line-height: 1.6;
+  background: #e9e8e8;
+  margin-top: 60px; /* Pour compenser la hauteur du header fixe */
+}
+
+/* Header et Navigation */
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  color: #000000;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+}
+
+strong {
+  color: #e94d35;
+}
+header h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+  padding-left: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.466);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  font-family: kanit, sans-serif;
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+.nav-links a.active {
+  color: #e94d35; /* Couleur orange */
+  border-bottom: 2px solid #e94d35; /* Soulignement orange */
+  background-color: rgba(233, 77, 53, 0.055); /* Légère surbrillance en orange */
+  padding-bottom: 3px; /* Ajustement pour l'effet visuel */
+}
+.nav-links a:hover {
+  color: #e94d35;
+  border-bottom: 2px solid #e94d35;
+}
+
+/* Section principale */
+.hero-section {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  background: #ffffff;
+  font-family: kanit, sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border: #000000 1px ;
+  box-shadow: #000000 1px 10px 20px;
+  border-radius: 10px;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.hero-name {
+  font-family: 'Handi', cursive;
+  font-size: 48px;
+  font-weight: 900;
+  color: #333;
+  line-height: 1.2;
+  text-decoration: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  color: #03084b;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.5;
+  
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  padding-left: 90px;
+}
+
+.hero-image img {
+
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Bouton de téléchargement CV */
+.download-cv {
+  margin-top: 30px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 15px 100px;
+  background-color: #0a0a23;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.cv-button:hover {
+  background-color: #1a1a4c;
+}
+
+/* Footer */
+footer {
+  background-color: #202020;
+  padding: 20px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Polices */
+@font-face {
+  font-family: 'LemonFruit';
+  src: url('Polices/Lemon Fruit.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ArcaneHand';
+  src: url('Polices/ARCANE-BF658a7a4a029a7.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Handi';
+  src: url('Polices/Handi.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Design responsive */
+@media (max-width: 1024px) {
+  .hero-content {
+    width: 95%;
+  }
+  
+  header {
+    padding: 0 10px;
+  }
+  
+  .nav-links li {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .hero-text {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .hero-name, .hero-title {
+    text-align: center;
+  }
+  
+  .hero-image {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero-section {
+    padding-top: 120px;
+  }
+  
+  .hero-name {
+    font-size: 36px;
+  }
+  
+  .hero-title {
+    font-size: 18px;
+  }
+}

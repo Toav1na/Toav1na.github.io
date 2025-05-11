@@ -1,0 +1,89 @@
+/* Styles spécifiques à la page À propos */
+.about-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px 60px; /* Ajout de padding en bas */
+    min-height: calc(100vh - 140px); /* 100vh - (header height + margin top) */
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+    position: relative;
+}
+
+.about-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #e94d35;
+    margin: 15px auto 0;
+}
+
+.about-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    
+    font-size: 28px;
+    color: #e94d35;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e94d35;
+    padding-bottom: 10px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design pour la page À propos */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    
+    .about-title {
+        font-size: 28px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+}

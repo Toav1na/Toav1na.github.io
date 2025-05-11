@@ -1,0 +1,291 @@
+/* Styles pour la page Compétences */
+.competences-container {
+    max-width: 900px;
+    margin: 80px auto 60px;
+    padding: 0 20px;
+}
+
+.competences-title {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.competences-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #e94d35;
+    margin: 15px auto 0;
+}
+
+/* Carousel */
+.competences-carousel {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.competence-slide {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.competence-slide.active {
+    display: block;
+}
+
+.competence-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.competence-content h2 {
+    font-size: 1.8rem;
+    color: #e94d35;
+    margin-bottom: 20px;
+}
+
+.competence-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+.qualites-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.qualites-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+}
+.qualite-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.qualite-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    transition: all 0.3s ease;
+    border-top: 4px solid #e94d35;
+    height: 100%;
+}
+
+.qualite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(233, 77, 53, 0.1);
+}
+
+.qualite-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.qualite-card h2 {
+    color: #e94d35;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.qualite-card h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #e94d35;
+}
+
+.qualite-content p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.qualite-content strong {
+    color: #e94d35;
+    font-weight: 600; /* Rend le texte un peu plus gras */
+}
+
+/* Option : Animation au survol */
+.qualite-content strong {
+    transition: color 0.3s ease;
+}
+.qualite-card:hover .qualite-content strong {
+    color: #9c2b1c; /* Orange légèrement plus foncé au survol */
+}
+
+
+
+/* Titres de section */
+.section-title {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #e94d35;
+    margin: 15px auto 0;
+}
+
+/* Jauge de compétence */
+.skill-meter {
+    width: 100%;
+    height: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin: 30px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, #e94d35, #f18f7f);
+    border-radius: 10px;
+    position: relative;
+    transition: width 1s ease;
+}
+
+.skill-level::after {
+    content: attr(data-level);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Contrôles du carousel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(233, 77, 53, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: #e94d35;
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+/* Indicateurs */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.indicator.active {
+    background: #e94d35;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .competences-carousel {
+        padding: 30px 20px;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .competence-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .competence-description {
+        font-size: 1rem;
+        .qualites-section {
+            grid-template-columns: 1fr;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .qualite-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .qualite-card {
+        padding: 20px;
+    }
+}
