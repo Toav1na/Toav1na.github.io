@@ -66,6 +66,12 @@
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.about-image img::hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(233, 77, 53, 0.1);
 }
 
 /* Responsive design pour la page À propos */
