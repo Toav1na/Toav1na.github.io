@@ -1,0 +1,70 @@
+/* --- THÈME CLAIR (Terre / Nature) --- */
+:root {
+  --color-dark-green: #2E4600;
+  --color-olive: #486B00;
+  --color-lime: #A2C523;
+  --color-earth: #7D4427;
+  --bg-beige: #F9F7F2;
+  --text-main: #1A1A1A;
+  --text-light: #4A4A4A;
+  
+  --nav-bg: rgba(255, 255, 255, 0.35);
+  --nav-border: rgba(255, 255, 255, 0.3);
+  --card-bg: #ffffff;
+}
+
+/* --- THÈME SOMBRE (Univers / Voie Lactée) --- */
+[data-theme="dark"] {
+  /* On remplace les tons "nature" par des lumières stellaires et nébuleuses */
+  --color-dark-green: #e2e8f0; /* Les titres deviennent Blanc Stellaire */
+  --color-olive: #818cf8;      /* L'accent principal : Bleu Indigo profond */
+  --color-lime: #c084fc;       /* L'accent secondaire : Violet Cosmique */
+  --color-earth: #38bdf8;      /* Les détails : Cyan lumineux */
+  
+  /* Le vide spatial */
+  --bg-beige: #050810;         /* Un bleu nuit/noir abyssal très élégant */
+  --text-main: #cbd5e1;        /* Texte clair bleuté (plus doux que du blanc pur) */
+  --text-light: #64748b;       /* Texte secondaire gris/bleu spatial */
+
+  /* Transparence des éléments (Glassmorphism sombre) */
+  --nav-bg: rgba(5, 8, 16, 0.65);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(15, 23, 42, 0.6); /* Les cartes ont un fond très légèrement bleuté */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- LE FOND DE LA PAGE --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-beige);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-align: left;
+  
+  /* Fond clair par défaut : points foncés (Papier recyclé) */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23333333' opacity='0.5'%3E%3Ccircle cx='15' cy='25' r='0.8'/%3E%3Ccircle cx='85' cy='15' r='1'/%3E%3Ccircle cx='140' cy='45' r='0.5'/%3E%3Ccircle cx='180' cy='15' r='1.2'/%3E%3Ccircle cx='45' cy='75' r='0.8'/%3E%3Ccircle cx='110' cy='95' r='1.5'/%3E%3Ccircle cx='170' cy='115' r='0.5'/%3E%3Ccircle cx='25' cy='145' r='1'/%3E%3Ccircle cx='85' cy='165' r='0.8'/%3E%3Ccircle cx='150' cy='185' r='1.2'/%3E%3Ccircle cx='190' cy='155' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  
+  /* Transition ultra douce entre la Terre et l'Espace */
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Le fond cosmique s'active uniquement en mode sombre */
+[data-theme="dark"] body {
+  /* SVG générant un champ d'étoiles de différentes tailles et luminosités */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='25' cy='30' r='1.2' opacity='0.9'/%3E%3Ccircle cx='80' cy='70' r='0.6' opacity='0.5'/%3E%3Ccircle cx='140' cy='20' r='1.5' opacity='1'/%3E%3Ccircle cx='210' cy='90' r='0.8' opacity='0.6'/%3E%3Ccircle cx='40' cy='160' r='1.2' opacity='0.7'/%3E%3Ccircle cx='110' cy='190' r='0.5' opacity='0.3'/%3E%3Ccircle cx='170' cy='150' r='1' opacity='0.8'/%3E%3Ccircle cx='10' cy='110' r='0.7' opacity='0.5'/%3E%3Ccircle cx='230' cy='210' r='1.4' opacity='0.9'/%3E%3Ccircle cx='130' cy='110' r='0.8' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 250px 250px;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  /* On s'assure que le app prenne toute la hauteur pour coller le footer en bas */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
