@@ -33,9 +33,9 @@ onMounted(() => {
     <nav class="pill-nav" :class="{ 'is-open': isMenuOpen }">
       
       <div class="logo">
-        <button @click="toggleTheme" class="logo-btn" title="Changer le thème">
-          <img :src="isDarkMode ? '/assets/images/logo-theme-sombre.png' : '/assets/images/logo-theme-claire.png'" alt="Logo TR" class="logo-img">
-        </button>
+        <RouterLink to="/" @click="closeMenu" class="logo-link">
+          <img :src="isDarkMode ? '/assets/images/logo-theme-sombre.png' : '/assets/images/logo-theme-claire.jpg'" alt="Logo TR" class="logo-img">
+        </RouterLink>
       </div>
 
       <div class="nav-links">
@@ -47,6 +47,11 @@ onMounted(() => {
       </div>
 
       <div class="nav-icons">
+        <button @click="toggleTheme" class="icon-btn theme-toggle" title="Changer le thème">
+          <svg v-if="isDarkMode" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg v-else viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
         <RouterLink to="/contact" class="icon-btn" title="Contact" @click="closeMenu">
           <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </RouterLink>
@@ -73,7 +78,6 @@ onMounted(() => {
       <p>© 2026 Toavina Randrianatrehina. Tous droits réservés.</p>
     </div>
   </footer>
-
 </template>
 
 <style scoped>
@@ -103,16 +107,12 @@ onMounted(() => {
   transition: all 0.3s ease;
 }
 
-/* --- LE STYLE DU LOGO BOUTON --- */
-.logo-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+/* --- LE STYLE DU LOGO --- */
+.logo-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: none; /* Enlève la bordure bleue par défaut au clic */
+  text-decoration: none;
 }
 
 .logo-img {
@@ -125,7 +125,7 @@ onMounted(() => {
 }
 
 .logo-img:hover {
-  transform: scale(1.08) rotate(5deg); /* Petit effet de rotation bonus au survol */
+  transform: scale(1.08);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -165,6 +165,15 @@ onMounted(() => {
   transform: translateY(-2px);
 }
 
+/* Le bouton spécifique pour le thème */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -199,7 +208,7 @@ onMounted(() => {
   padding: 2.5rem 20px;
   text-align: center;
   border-top: 1px solid var(--nav-border);
-  background-color: var(--bg-beige); /* Opacité pour cacher les étoiles */
+  background-color: var(--bg-beige);
   position: relative;
   z-index: 10;
   margin-top: auto; 
