@@ -39,10 +39,10 @@
             Étudiant en <strong>deuxième année de BUT Informatique</strong> à l'IUT Clermont Auvergne, je me passionne pour le développement de solutions complètes.
           </p>
           <p>
-            Mon parcours m'a permis d'allier mon goût pour la logique algorithmique avec la création d'interfaces intuitives. Que ce soit sur la conception de bases de données, le code backend ou l'intégration frontend, j'aime comprendre un projet dans sa globalité.
+            Mon parcours m'a permis d'allier mon goût pour la <strong>logique algorithmique</strong> avec la création d'interfaces intuitives. Que ce soit sur la conception de <strong>bases de données</strong>, le code <strong>backend</strong> ou l'intégration <strong>frontend</strong>, j'aime comprendre un projet dans sa globalité.
           </p>
           <p>
-            Toujours curieux, je recherche un stage ou une alternance pour mettre en pratique mes connaissances et relever de nouveaux défis techniques au sein d'une équipe dynamique.
+            Toujours curieux, je <strong>recherche un stage ou une alternance</strong> pour mettre en pratique mes connaissances et relever de nouveaux défis techniques au sein d'une équipe dynamique.
           </p>
         </div>
 

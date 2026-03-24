@@ -4,7 +4,7 @@ import { ref, watch } from 'vue'
 const parcours = ref([
   {
     id: 'future',
-    position: 'center', // Tronc (Haut)
+    position: 'center',
     title: 'La suite de mon parcours...',
     establishment: 'À la recherche de nouvelles opportunités',
     date: 'Demain et au-delà',
@@ -15,7 +15,7 @@ const parcours = ref([
   },
   {
     id: 'iut',
-    position: 'right', // Branche Droite
+    position: 'right',
     title: 'BUT Informatique (2ème Année)',
     establishment: 'IUT Clermont Auvergne (Aubière)',
     date: '2024 - Présent',
@@ -26,11 +26,11 @@ const parcours = ref([
   },
   {
     id: 'exp1',
-    position: 'left', // Branche Gauche
+    position: 'left',
     title: 'Castration de maïs',
     establishment: 'Exploitation agricole, Auvergne',
     date: 'Été 2022',
-    image: 'mais.jpg', // Met bien une image "mais.jpg" dans public/assets/images/
+    image: 'mais.jpg',
     description: "Première expérience professionnelle sous forme de travail saisonnier dans les champs. Une expérience fondatrice sur la valeur du travail.",
     details: [
       "Castration manuelle des plants de maïs pour la production de semences",
@@ -42,7 +42,7 @@ const parcours = ref([
   },
   {
     id: 'lycee',
-    position: 'right', // Branche Droite
+    position: 'right',
     title: 'Lycée (Baccalauréat)',
     establishment: 'Lycée Godefroy de Bouillon',
     date: '2021 - 2024',
@@ -57,7 +57,7 @@ const parcours = ref([
   },
   {
     id: 'college',
-    position: 'center', // Tronc (Racines)
+    position: 'center',
     title: 'Collège',
     establishment: 'Collège Franc Rosier',
     date: '2016 - 2021',
@@ -114,7 +114,7 @@ window.addEventListener('keydown', (e) => {
           >
             <div class="node-card">
               <div class="node-image-wrapper">
-                <img v-if="item.image" :src="`/assets/images/${item.image}`" :alt="item.title" class="node-image">
+                <img v-if="item.image" :src="`./assets/images/${item.image}`" :alt="item.title" class="node-image">
                 <div v-if="!item.image" class="placeholder-icon">🍃</div>
               </div>
               <div class="node-info">
@@ -135,7 +135,7 @@ window.addEventListener('keydown', (e) => {
           
           <div class="modal-header">
             <div class="modal-image-wrapper">
-              <img v-if="selectedNode.image" :src="`/assets/images/${selectedNode.image}`" :alt="selectedNode.title" class="modal-image" @error="$event.target.style.display='none'">
+              <img v-if="selectedNode.image" :src="`./assets/images/${selectedNode.image}`" :alt="selectedNode.title" class="modal-image" @error="$event.target.style.display='none'">
               <div v-if="!selectedNode.image" class="modal-icon">🌳</div>
             </div>
             <div class="modal-title-area">
@@ -180,14 +180,12 @@ window.addEventListener('keydown', (e) => {
   margin-bottom: 3rem;
 }
 
-/* --- STRUCTURE DE L'ARBRE (DESKTOP) --- */
 .tree-container {
   position: relative;
   padding: 2rem 0;
   width: 100%;
 }
 
-/* Le Tronc */
 .trunk {
   position: absolute;
   top: 0;
@@ -195,7 +193,6 @@ window.addEventListener('keydown', (e) => {
   left: 50%;
   transform: translateX(-50%);
   width: 8px;
-  /* Dégradé : vert en haut (feuilles), marron au milieu, marron foncé en bas (racines) */
   background: linear-gradient(to bottom, var(--color-lime) 0%, var(--color-earth) 20%, #5c3219 100%);
   border-radius: 4px;
   z-index: 0;
@@ -209,7 +206,6 @@ window.addEventListener('keydown', (e) => {
   z-index: 1;
 }
 
-/* Lignes (Rows) pour aligner à gauche, à droite ou au centre */
 .tree-row {
   display: flex;
   width: 100%;
@@ -221,25 +217,22 @@ window.addEventListener('keydown', (e) => {
   justify-content: center;
 }
 
-/* Moitié gauche */
 .tree-row.left {
   padding-right: 50%; 
 }
 .tree-row.left .tree-node {
   margin-left: auto;
-  margin-right: 40px; /* Laisse de la place pour la branche */
+  margin-right: 40px;
 }
 
-/* Moitié droite */
 .tree-row.right {
   padding-left: 50%;
 }
 .tree-row.right .tree-node {
   margin-right: auto;
-  margin-left: 40px; /* Laisse de la place pour la branche */
+  margin-left: 40px;
 }
 
-/* Les Branches horizontales */
 .tree-branch {
   position: absolute;
   top: 50%;
@@ -260,10 +253,9 @@ window.addEventListener('keydown', (e) => {
   border-radius: 0 4px 4px 0;
 }
 
-/* --- DESIGN DES CELLULES (NŒUDS) --- */
 .tree-node {
   width: 100%;
-  max-width: 380px; /* Taille max d'une carte */
+  max-width: 380px;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -290,14 +282,13 @@ window.addEventListener('keydown', (e) => {
 
 .tree-node.future .node-card {
   border: 2px dashed var(--color-lime);
-  background-color: var(--bg-beige); /* Fond blanc totalement opaque */
+  background-color: var(--bg-beige);
 }
 
 .tree-node.future .node-image-wrapper {
-  background-color: var(--bg-beige);/* On s'assure que le haut de la carte est opaque aussi */
+  background-color: var(--bg-beige);
 }
 
-/* Image */
 .node-image-wrapper {
   height: 150px;
   width: 100%;
@@ -324,7 +315,6 @@ window.addEventListener('keydown', (e) => {
   color: var(--color-lime);
 }
 
-/* Info */
 .node-info {
   padding: 1.5rem;
   text-align: center;
@@ -357,7 +347,6 @@ window.addEventListener('keydown', (e) => {
   color: var(--color-dark-green);
 }
 
-/* --- MODALE (POP-UP) --- */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -435,9 +424,7 @@ window.addEventListener('keydown', (e) => {
 .fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease, transform 0.3s ease; }
 .fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(20px); }
 
-/* --- RESPONSIVE MOBILE --- */
 @media screen and (max-width: 850px) {
-  /* Sur mobile, on retire les branches et on centre tout */
   .tree-branch { display: none; }
   .tree-row.left, .tree-row.right { padding: 0; justify-content: center; }
   .tree-row.left .tree-node, .tree-row.right .tree-node { margin: 0; }

@@ -39,7 +39,7 @@
         </div>
       </a>
 
-      <a href="/cv.pdf" download class="contact-card cv-card">
+      <a href="/CV-Toavina-Randrianatrehina.pdf" download class="contact-card cv-card">
         <div class="card-icon cv-text">CV</div>
         <div class="card-content">
           <h3>Curriculum Vitae</h3>

@@ -34,7 +34,7 @@ onMounted(() => {
       
       <div class="logo">
         <RouterLink to="/" @click="closeMenu" class="logo-link">
-          <img :src="isDarkMode ? '/assets/images/logo-theme-sombre.png' : '/assets/images/logo-theme-claire.png'" alt="Logo TR" class="logo-img">
+          <img :src="isDarkMode ? './assets/images/logo-theme-sombre.png' : './assets/images/logo-theme-claire.png'" alt="Logo TR" class="logo-img">
         </RouterLink>
       </div>
 
